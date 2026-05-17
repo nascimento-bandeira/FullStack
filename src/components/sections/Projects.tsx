@@ -79,7 +79,7 @@ export default function Projects() {
 
                 <div className="mt-auto">
                   {project.logo ? (
-                    <img src={project.logo} alt={project.title} className="h-12 w-auto mb-6 opacity-80 brightness-0 invert" />
+                    <img src={project.logo} alt={project.title} className="h-12 w-auto mb-6 object-contain" />
                   ) : project.icon && (
                     <div className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center mb-6 border border-white/10">
                       <project.icon size={24} className="text-neon-teal" />
