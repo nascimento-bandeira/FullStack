@@ -15,7 +15,7 @@ export default function Hero() {
             Desenvolvedor Web
           </div>
           
-          <h1 className="font-display text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tight">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tight">
             Desenvolvimento de sites profissionais para negócios que querem <span className="text-gradient">crescer online</span>.
           </h1>
           
