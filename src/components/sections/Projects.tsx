@@ -9,24 +9,28 @@ const projects = [
     logo: "https://lh3.googleusercontent.com/aida/ADBb0uhrDV1SNCLfecCyZAsU5lYeAOsf-5nWk-Fmkiqz-bp6eutu5Fhx_yw6kkKR9F1rLcDtmVRmzD-fIkdIZ5gAt9lljb9NU1inhYf-L4IhYopjL26-0WcASdFZrKV2dNNPRPsYWaei-3meECt4Yr5BNIYHqFz2PHahwFesg2SrKR4gjeMGvDlCLOTsLpYkUx4eygsg4T6Xr7UokMQDia8C4rCEtbwpxx9E9mN2vHx2r_pH3env91zgGvvkpi0",
     tag: "Mais Recente",
     icon: null,
+    link: "https://www.cascavelrunningteam.com.br/",
   },
   {
     title: "Agência de Marketing (LP)",
     description: "Landing page de alta conversão para agência de marketing digital, com foco em autoridade e captação de leads.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjb3hvyhsfgyxO1rLUwNKIh9IyH8_B5qPFTelEeWXTBsvZAl2zWnLlM1la99xGDcEcwyXtAuPygWwnM_3rLmVYOWxL7tg4Q5bZqJUwMpIlPuuMLaM74h9RskojkyVIi_mcmXRGh5TGP7cDrYksQYAQjmKdYzEOURckfmYkfODVxTae7Q2vx-5vBBBv6AkJEusgD6aMBRzs30CD5ddWZrhTm9NUuXtAubHfRe55pEjJn64e8Q1JC7R4w1Cld4PafhWoG9dJqFkQ7_o",
     icon: TrendingUp,
+    link: "",
   },
   {
     title: "Lumina Estética",
     description: "Site institucional para clínica de estética premium, com agendamento de serviços e catálogo de tratamentos.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn35K_KQlMyjMxVvG7UB2C7tdcs9T_OrcrMsTP0Nrbhc60bp_GiCrJZMqallxhXLUqrXEt4V26bJ2vFY7s6T5Dtqf28pYlg1D4Khnfb95BAmLFnNxioZWFLhGQ9Cz0fhfkW1_nZIj3vA3JbzuOGKWXTWHDxSGXdm1Yz1flB3jvpo1WKrQHRmDHdce_890pzGAuqzbM20FiIa_g-NuOHH0OkTYdV7uhtjliyOuRpD3eeFaDTaCiiFky3H57MtgBaXDHSM3ZpenAchU",
     icon: Sparkles,
+    link: "",
   },
   {
     title: "Portfólio Pessoal",
     description: "Site de apresentação profissional com foco em identidade pessoal, cases de estudo e arquitetura minimalista.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuApiuAihI2Ti9Ntb1t_mzinTvpnRC7KjRGlwXT6-0VvLhOu2vs8knZFhVbkoRqzI4Kc-FTOoD8qVjJ1Y-5UyJUbnKy93wiy5o9lME249Q3yYasbaux_q-GL4q2_9wl61nHnFlFnaLguoxafrApjOY0uxIZipXvD_yJlFvNDIatKIPufJl5BlFwDDWu5Q-7zBi7PIEZsFTVM30cWgWzKuDGMrGgtcwSe2MNi111ZOVjjZx0aB3wd-RJp26t9JEyHPcyy_dRir2XDeEg",
     icon: User,
+    link: "",
   },
 ];
 
@@ -43,13 +47,17 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={project.link || "#"}
+              onClick={project.link ? undefined : (e) => e.preventDefault()}
+              target={project.link ? "_blank" : undefined}
+              rel={project.link ? "noopener noreferrer" : undefined}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative h-[450px] rounded-3xl overflow-hidden ambient-shadow"
+              className={`group relative h-[450px] rounded-3xl overflow-hidden ambient-shadow block ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
             >
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -64,9 +72,9 @@ export default function Projects() {
                       {project.tag}
                     </span>
                   ) : <div></div>}
-                  <button className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-on-surface hover:bg-neon-teal hover:text-surface transition-all">
+                  <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-on-surface group-hover:bg-neon-teal group-hover:text-surface transition-all duration-300">
                     <ArrowUpRight size={20} />
-                  </button>
+                  </div>
                 </div>
 
                 <div className="mt-auto">
@@ -83,7 +91,7 @@ export default function Projects() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
