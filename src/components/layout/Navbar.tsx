@@ -7,7 +7,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["sobre", "serviços", "projetos", "processo"];
+      const sections = ["home", "sobre", "serviços", "projetos", "processo"];
       const scrollPosition = window.scrollY + 200; // offset for triggers
 
       for (const section of sections) {
@@ -17,6 +17,7 @@ export default function Navbar() {
           const height = el.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
             const displayName = 
+              section === "home" ? "" :
               section === "sobre" ? "Sobre" :
               section === "serviços" ? "Serviços" :
               section === "projetos" ? "Projetos" : "Processo";
@@ -34,13 +35,15 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-        <motion.div 
+        <motion.a 
+          href="#home"
+          onClick={() => setActiveTab("")}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="font-display text-lg font-extrabold tracking-tighter text-on-surface"
+          className="font-display text-lg font-extrabold tracking-tighter text-on-surface hover:text-neon-teal transition-colors"
         >
           FULL STACK DEV
-        </motion.div>
+        </motion.a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2 items-center">
