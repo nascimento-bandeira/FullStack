@@ -12,7 +12,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-teal/10 border border-neon-teal/20 font-mono text-[10px] text-neon-teal mb-8">
             <span className="w-2 h-2 rounded-full bg-neon-teal animate-pulse"></span>
-            Desenvolvedor Web Freelancer
+            Desenvolvedor Web
           </div>
           
           <h1 className="font-display text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tight">
