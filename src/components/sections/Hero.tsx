@@ -20,7 +20,7 @@ export default function Hero() {
           </h1>
           
           <p className="font-sans text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed">
-            Crio páginas modernas, rápidas e responsivas para empresas, profissionais autônomos, eventos, equipes e projetos que precisam de uma presença digital forte.
+            Criamos páginas modernas, rápidas e responsivas para empresas, profissionais autônomos, eventos, equipes e projetos que precisam de uma presença digital forte.
           </p>
           
           <div className="flex flex-wrap items-center gap-5">
