@@ -24,7 +24,7 @@ export default function CTA() {
           whileHover={{ scale: 1.05 }}
           className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-neon-teal text-surface font-sans text-lg font-bold shadow-[0_0_30px_rgba(45,212,191,0.3)] transition-shadow"
         >
-          Falar no WhatsApp
+          Falar pelo WhatsApp
           <MessageSquare size={24} />
         </motion.button>
       </div>

@@ -48,7 +48,7 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           className="font-display text-lg font-extrabold tracking-tighter text-on-surface hover:text-neon-teal transition-colors"
         >
-          FULL STACK DEV
+          IMPÉRIODEV
         </motion.a>
 
         {/* Desktop Navigation */}

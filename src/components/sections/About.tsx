@@ -30,7 +30,7 @@ export default function About() {
             Foco em performance, design minimalista e <span className="text-neon-teal">experiência do usuário</span>.
           </h2>
           <p className="font-sans text-lg text-on-surface-variant leading-relaxed">
-            Somos a Full Stack Dev, uma equipe dedicada a construir produtos digitais que não apenas parecem incríveis, mas funcionam perfeitamente sob o capô. Nossa abordagem combina estética limpa com código rigorosamente estruturado, garantindo que o seu negócio seja representado com a máxima autoridade online.
+            Somos a ImpérioDev, uma equipe dedicada a construir produtos digitais que não apenas parecem incríveis, mas funcionam perfeitamente sob o capô. Nossa abordagem combina estética limpa com código rigorosamente estruturado, garantindo que o seu negócio seja representado com a máxima autoridade online.
           </p>
           
           <div className="grid grid-cols-2 gap-8 pt-4">

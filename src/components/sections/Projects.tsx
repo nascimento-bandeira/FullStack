@@ -1,12 +1,13 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, TrendingUp, Sparkles, User } from "lucide-react";
 
+
 const projects = [
   {
     title: "Cascavel Running Team",
     description: "Site moderno para equipe de corrida com informações institucionais, mural de atletas e agenda de eventos.",
-    image: "https://lh3.googleusercontent.com/aida/ADBb0ujiGQ1OfF_-8DYxuC5G476YCvUWM1LRr2a0YQbqOZolPUhGbG5B12C95ETMFpRo-9Yk6DoPKV0qooBMRoma9eVV9gY-UZarKn7ElCT1tVPb61RWCTTmoDZd3P9heX_IeoDzHIa4UpnSaQAQx9n2Ez36MZX99XGKmaNPuEAu4aqx3sUXYhaRg_lx0YhBDhP64F3JOBhnIVgIlKK840QsFDpSrZNkSAwO6bo1l-_ZZwYY5rcCIeetGzG5RM8",
-    logo: "https://lh3.googleusercontent.com/aida/ADBb0uhrDV1SNCLfecCyZAsU5lYeAOsf-5nWk-Fmkiqz-bp6eutu5Fhx_yw6kkKR9F1rLcDtmVRmzD-fIkdIZ5gAt9lljb9NU1inhYf-L4IhYopjL26-0WcASdFZrKV2dNNPRPsYWaei-3meECt4Yr5BNIYHqFz2PHahwFesg2SrKR4gjeMGvDlCLOTsLpYkUx4eygsg4T6Xr7UokMQDia8C4rCEtbwpxx9E9mN2vHx2r_pH3env91zgGvvkpi0",
+    image: "/cascavel-running.png",
+    logo: "https://lh3.googleusercontent.com/aida-public/ADBb0uhrDV1SNCLfecCyZAsU5lYeAOsf-5nWk-Fmkiqz-bp6eutu5Fhx_yw6kkKR9F1rLcDtmVRmzD-fIkdIZ5gAt9lljb9NU1inhYf-L4IhYopjL26-0WcASdFZrKV2dNNPRPsYWaei-3meECt4Yr5BNIYHqFz2PHahwFesg2SrKR4gjeMGvDlCLOTsLpYkUx4eygsg4T6Xr7UokMQDia8C4rCEtbwpxx9E9mN2vHx2r_pH3env91zgGvvkpi0",
     tag: "Mais Recente",
     icon: null,
     link: "https://www.cascavelrunningteam.com.br/",
@@ -16,22 +17,22 @@ const projects = [
     description: "Landing page de alta conversão para agência de marketing digital, com foco em autoridade e captação de leads.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjb3hvyhsfgyxO1rLUwNKIh9IyH8_B5qPFTelEeWXTBsvZAl2zWnLlM1la99xGDcEcwyXtAuPygWwnM_3rLmVYOWxL7tg4Q5bZqJUwMpIlPuuMLaM74h9RskojkyVIi_mcmXRGh5TGP7cDrYksQYAQjmKdYzEOURckfmYkfODVxTae7Q2vx-5vBBBv6AkJEusgD6aMBRzs30CD5ddWZrhTm9NUuXtAubHfRe55pEjJn64e8Q1JC7R4w1Cld4PafhWoG9dJqFkQ7_o",
     icon: TrendingUp,
-    link: "",
+    link: "https://lp-agencia-marketing.vercel.app/",
   },
   {
     title: "Lumina Estética",
     description: "Site institucional para clínica de estética premium, com agendamento de serviços e catálogo de tratamentos.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn35K_KQlMyjMxVvG7UB2C7tdcs9T_OrcrMsTP0Nrbhc60bp_GiCrJZMqallxhXLUqrXEt4V26bJ2vFY7s6T5Dtqf28pYlg1D4Khnfb95BAmLFnNxioZWFLhGQ9Cz0fhfkW1_nZIj3vA3JbzuOGKWXTWHDxSGXdm1Yz1flB3jvpo1WKrQHRmDHdce_890pzGAuqzbM20FiIa_g-NuOHH0OkTYdV7uhtjliyOuRpD3eeFaDTaCiiFky3H57MtgBaXDHSM3ZpenAchU",
     icon: Sparkles,
-    link: "",
+    link: "https://lumina-estetica-lake.vercel.app/",
   },
-  {
+  /*{
     title: "Portfólio Pessoal",
     description: "Site de apresentação profissional com foco em identidade pessoal, cases de estudo e arquitetura minimalista.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuApiuAihI2Ti9Ntb1t_mzinTvpnRC7KjRGlwXT6-0VvLhOu2vs8knZFhVbkoRqzI4Kc-FTOoD8qVjJ1Y-5UyJUbnKy93wiy5o9lME249Q3yYasbaux_q-GL4q2_9wl61nHnFlFnaLguoxafrApjOY0uxIZipXvD_yJlFvNDIatKIPufJl5BlFwDDWu5Q-7zBi7PIEZsFTVM30cWgWzKuDGMrGgtcwSe2MNi111ZOVjjZx0aB3wd-RJp26t9JEyHPcyy_dRir2XDeEg",
     icon: User,
     link: "",
-  },
+  },*/
 ];
 
 export default function Projects() {
