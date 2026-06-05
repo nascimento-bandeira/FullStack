@@ -17,7 +17,10 @@ export default function CTA() {
           <span className="text-gradient">profissional?</span>
         </motion.h2>
 
-        <motion.button
+        <motion.a
+          href="https://wa.me/5562982593121"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -26,7 +29,7 @@ export default function CTA() {
         >
           Falar pelo WhatsApp
           <MessageSquare size={24} />
-        </motion.button>
+        </motion.a>
       </div>
     </section>
   );

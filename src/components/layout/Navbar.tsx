@@ -76,7 +76,7 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="#contato"
+            href="https://wa.me/5562982593121" target="_blank" rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="ml-4 px-6 py-2 rounded-full bg-neon-teal/10 text-neon-teal border border-neon-teal/20 hover:bg-neon-teal hover:text-surface transition-all font-mono text-xs font-bold"
@@ -121,7 +121,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#contato"
+                href="https://wa.me/5562982593121" target="_blank" rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="w-full text-center py-4 rounded-xl bg-neon-teal text-surface font-sans font-bold hover:scale-[1.02] transition-transform shadow-lg shadow-neon-teal/10"
               >
