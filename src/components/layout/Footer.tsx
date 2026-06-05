@@ -12,7 +12,7 @@ const footerLinks = [
     name: "GitHub",
     members: [
       { name: "Mateus Nascimento", url: "https://github.com/mateusnasc97" },
-      { name: "Gabriel Bandeira", url: "https://github.com/gabrielbandeira1" },
+      { name: "Gabriel Bandeira", url: "https://github.com/gabrielbandeirasob" },
       { name: "ImperioDev", url: "https://github.com/orgs/nascimento-bandeira/repositories" },
     ]
   }
