@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { ChevronUp } from "lucide-react";
 
 const footerLinks = [
@@ -19,6 +20,27 @@ const footerLinks = [
 ];
 
 export default function Footer() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const containerRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (openDropdown) {
+        const ref = containerRefs.current[openDropdown];
+        if (ref && !ref.contains(event.target as Node)) {
+          setOpenDropdown(null);
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [openDropdown]);
+
   return (
     <footer className="py-20 border-t border-white/5 bg-surface-dim">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
@@ -29,20 +51,41 @@ export default function Footer() {
 
         <div className="flex flex-wrap justify-center items-center gap-8">
           {footerLinks.map((link) => (
-            <div key={link.name} className="relative group">
-              <button className="font-sans text-sm text-on-surface-variant hover:text-neon-teal transition-colors flex items-center gap-1 py-2">
+            <div 
+              key={link.name} 
+              ref={(el) => {
+                containerRefs.current[link.name] = el;
+              }}
+              className="relative group"
+            >
+              <button 
+                onClick={() => setOpenDropdown(openDropdown === link.name ? null : link.name)}
+                className="font-sans text-sm text-on-surface-variant hover:text-neon-teal transition-colors flex items-center gap-1 py-2"
+              >
                 {link.name}
-                <ChevronUp size={14} className="opacity-70 group-hover:rotate-180 transition-transform duration-300" />
+                <ChevronUp 
+                  size={14} 
+                  className={`opacity-70 transition-transform duration-300 ${
+                    openDropdown === link.name ? "rotate-180" : "group-hover:rotate-180"
+                  }`} 
+                />
               </button>
               
               {/* Dropdown flutuante (Abre para cima) */}
-              <div className="absolute bottom-[100%] left-1/2 -translate-x-1/2 mb-1 w-32 bg-surface border border-white/10 rounded-xl shadow-[0_-10px_30px_rgba(0,0,0,0.5)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 overflow-hidden z-50 flex flex-col">
+              <div 
+                className={`absolute bottom-[100%] left-1/2 -translate-x-1/2 mb-1 w-32 bg-surface border border-white/10 rounded-xl shadow-[0_-10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 overflow-hidden z-50 flex flex-col ${
+                  openDropdown === link.name 
+                    ? "opacity-100 visible translate-y-0" 
+                    : "opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0"
+                }`}
+              >
                 {link.members.map((member) => (
                   <a 
                     key={member.name}
                     href={member.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => setOpenDropdown(null)}
                     className="px-4 py-2.5 text-sm text-on-surface-variant hover:text-neon-teal hover:bg-white/5 transition-colors text-center border-b border-white/5 last:border-0"
                   >
                     {member.name}
